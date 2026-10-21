@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 
 [vars]
 # Comma-separated list of sites allowed to call the assistant
-ALLOWED_ORIGINS = "https://asylkechgirls.edu.kg,https://www.asylkechgirls.edu.kg"
+ALLOWED_ORIGINS = "https://ademtkn.github.io,https://asylkechgirls.edu.kg,https://www.asylkechgirls.edu.kg"
 
 # Serve the assistant on its own subdomain (the site itself is on GitHub Pages), then set
 # SITE.aiEndpoint in src/build.mjs to "https://api.asylkechgirls.edu.kg":

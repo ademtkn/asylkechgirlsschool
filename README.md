@@ -57,9 +57,13 @@ Cevap kaynakları:
 
 ## Yayın: GitHub Pages + asylkechgirls.edu.kg
 `main` dalına her gönderimde `.github/workflows/pages.yml` siteyi derler ve `dist/` klasörünü GitHub Pages'te yayınlar.
-`dist/CNAME` dosyası alan adını (`asylkechgirls.edu.kg`) GitHub'a bildirir.
+Şu anki adres: **https://ademtkn.github.io/asylkechgirlsschool/**
 
 1. GitHub → depo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Alan adına geçerken: `src/build.mjs` içinde `SITE.url` değerini `https://asylkechgirls.edu.kg`, `SITE.customDomain`
+değerini `asylkechgirls.edu.kg` yapın (derleme `dist/CNAME` dosyasını yazar), sonra aşağıdakileri yapın.
+
 2. Alan adının DNS kayıtları (cctld.kg panelinde ya da alan adını yönettiğiniz DNS servisinde):
 
    | Tür | Ad | Değer |

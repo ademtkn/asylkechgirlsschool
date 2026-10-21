@@ -14,7 +14,10 @@ const LANGS = [ky, ru, en]; // first = default language
 
 // ---------- School facts (edit here) ----------
 const SITE = {
-  url: 'https://asylkechgirls.edu.kg',
+  // Until the domain is connected the site lives on GitHub Pages' own address.
+  // To switch: url → 'https://asylkechgirls.edu.kg' and customDomain → 'asylkechgirls.edu.kg'.
+  url: 'https://ademtkn.github.io/asylkechgirlsschool',
+  customDomain: '',
   phones: [
     { label: '+996 702 22 99 99', tel: '+996702229999' },
     { label: '+996 990 22 21 99', tel: '+996990222199' },
@@ -805,6 +808,6 @@ fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="
 ${LANGS.flatMap((l) => PAGES.map((p) => `  <url><loc>${SITE.url}/${l.code}/${p.file}</loc></url>`)).join('\n')}
 </urlset>
 `);
-fs.writeFileSync(path.join(DIST, 'CNAME'), new URL(SITE.url).hostname + '\n'); // GitHub Pages custom domain
+if (SITE.customDomain) fs.writeFileSync(path.join(DIST, 'CNAME'), SITE.customDomain + '\n'); // GitHub Pages custom domain
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`);
 console.log(`Built ${count} pages in ${LANGS.length} languages → ${path.relative(ROOT, DIST)}/`);
