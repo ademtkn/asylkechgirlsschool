@@ -715,9 +715,9 @@ function aiConfig(t) {
 // ---------- language chooser (site root) ----------
 function rootPage({ standalone }) {
   const greet = LANGS.map((l, i) => `<p class="welcome-line${i === 0 ? ' is-on' : ''}" lang="${l.htmlLang}" data-greet="${l.code}"${i ? ' aria-hidden="true"' : ''}>${esc(l.root.welcome)}</p>`).join('');
-  const cards = LANGS.map((l) => `<a class="pick" href="${l.code}/index.html" data-lang="${l.code}" lang="${l.htmlLang}">
+  // Language cards: English first, then Kyrgyz and Russian. The greeting appears only under the logo.
+  const cards = [en, ky, ru].map((l) => `<a class="pick" href="${l.code}/index.html" data-lang="${l.code}" lang="${l.htmlLang}">
       <span class="pick-label">${l.label}</span>
-      <span class="pick-greet">${esc(l.root.welcome)}</span>
       <span class="pick-sub">${esc(l.root.sub)}</span>
       <span class="pick-go">${esc(l.root.cont)} <span aria-hidden="true">→</span></span>
     </a>`).join('');

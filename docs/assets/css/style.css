@@ -513,7 +513,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 760px) {
   .picks { grid-template-columns: minmax(0, 420px); justify-content: center; }
   .pick { border-radius: 22px; grid-template-columns: auto 1fr; justify-items: start; text-align: left; column-gap: 1rem; padding: 1.2rem; }
-  .pick-label { grid-row: span 3; width: 60px; height: 40px; font-size: 1.15rem; }
+  .pick-label { grid-row: span 2; width: 60px; height: 40px; font-size: 1.15rem; }
   .pick-greet { font-size: 1.15rem; }
   .pick-go { justify-self: start; margin-top: .2rem; }
   .welcome { min-height: 3.6em; }
