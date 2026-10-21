@@ -1,0 +1,13 @@
+name = "asylkech-assistant"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Comma-separated list of sites allowed to call the assistant
+ALLOWED_ORIGINS = "https://asylkech.edu.kg,https://www.asylkech.edu.kg"
+
+# Route the assistant under the school domain so the site can call /api/chat:
+# routes = [{ pattern = "asylkech.edu.kg/api/chat", zone_name = "asylkech.edu.kg" }]
+
+# Secret (never commit it):  npx wrangler secret put ANTHROPIC_API_KEY

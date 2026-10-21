@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://asylkech.edu.kg/sitemap.xml
