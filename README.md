@@ -7,7 +7,7 @@ Indigo Academy'ye bağlı Asylkech Girls' School için 3 dilli (Kırgızca, Rus�
 src/build.mjs          Sayfa şablonları + okul bilgileri (telefon, sosyal medya, kadro listesi)
 src/content/ky|ru|en   Her dilin tüm metinleri
 assets/css, js, img    Tasarım, betikler, logolar
-dist/                  Derlenmiş site (sunucuya yüklenecek klasör)
+docs/                  Derlenmiş site (GitHub Pages bu klasörü yayınlar)
 ```
 
 Derleme: `node src/build.mjs` (Node 18+, bağımlılık yok).
@@ -39,7 +39,7 @@ Görev adları `src/content/*.mjs` içinde `staff.roles` altındadır.
 
 ## Yapay zeka asistanı (sağ alt köşe)
 `assets/js/assistant.js`, her sayfanın sağ alt köşesinde açılan sohbet penceresidir. Sadece okulla ilgili soruları,
-sitenin kendi içeriğinden üretilen bilgi tabanıyla (`dist/assets/data/kb-*.json`) cevaplar. Konu dışı sorularda
+sitenin kendi içeriğinden üretilen bilgi tabanıyla (`docs/assets/data/kb-*.json`) cevaplar. Konu dışı sorularda
 yalnızca okulla ilgili yardım edebileceğini söyler. Bilgi tabanı her `node src/build.mjs` çalıştırmasında metinlerden
 yeniden oluşturulur, yani siteyi güncelleyince asistan da güncellenir.
 
@@ -56,13 +56,15 @@ Cevap kaynakları:
 2. **Sunucu yoksa:** Asistan sitedeki metinlerde anahtar kelime araması yapar ve ilgili bölümü sayfa bağlantısıyla gösterir.
 
 ## Yayın: GitHub Pages + asylkechgirls.edu.kg
-`main` dalına her gönderimde `.github/workflows/pages.yml` siteyi derler ve `dist/` klasörünü GitHub Pages'te yayınlar.
+Site `docs/` klasöründen yayınlanır. Metinleri değiştirdikten sonra `node src/build.mjs` çalıştırıp `docs/` dahil commit edin.
+
 Şu anki adres: **https://ademtkn.github.io/asylkechgirlsschool/**
 
-1. GitHub → depo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+1. GitHub → depo → **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
+   **Branch: `main`**, klasör **`/docs`** → **Save**.
 
 Alan adına geçerken: `src/build.mjs` içinde `SITE.url` değerini `https://asylkechgirls.edu.kg`, `SITE.customDomain`
-değerini `asylkechgirls.edu.kg` yapın (derleme `dist/CNAME` dosyasını yazar), sonra aşağıdakileri yapın.
+değerini `asylkechgirls.edu.kg` yapın (derleme `docs/CNAME` dosyasını yazar), sonra aşağıdakileri yapın.
 
 2. Alan adının DNS kayıtları (cctld.kg panelinde ya da alan adını yönettiğiniz DNS servisinde):
 
@@ -74,4 +76,4 @@ değerini `asylkechgirls.edu.kg` yapın (derleme `dist/CNAME` dosyasını yazar)
    | A | @ | 185.199.111.153 |
    | CNAME | www | ademtkn.github.io |
 
-3. DNS yayıldıktan sonra **Settings → Pages → Custom domain** alanında `asylkechgirls.edu.kg` görünür; **Enforce HTTPS** kutusunu işaretleyin.
+3. DNS yayıldıktan sonra **Settings → Pages → Custom domain** alanına `asylkechgirls.edu.kg` yazıp kaydedin; **Enforce HTTPS** kutusunu işaretleyin.

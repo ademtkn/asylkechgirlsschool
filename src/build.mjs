@@ -1,5 +1,6 @@
 // Static site generator for Asylkech Girls' School.
-// Usage: node src/build.mjs   →   writes the site to ./dist
+// Usage: node src/build.mjs   →   writes the site to ./docs (served by GitHub Pages from main /docs)
+//        add --preview to also write docs/preview.html for the Claude artifact preview
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,7 +10,7 @@ import ru from './content/ru.mjs';
 import en from './content/en.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = path.join(ROOT, 'docs');
 const LANGS = [ky, ru, en]; // first = default language
 
 // ---------- School facts (edit here) ----------
@@ -802,7 +803,8 @@ for (const t of LANGS) {
 }
 fs.writeFileSync(path.join(ROOT, 'server', 'knowledge.json'), JSON.stringify(Object.fromEntries(Object.entries(KB).map(([k, v]) => [k, v.prompt]))));
 fs.writeFileSync(path.join(DIST, 'index.html'), rootPage({ standalone: true }));
-fs.writeFileSync(path.join(DIST, 'preview.html'), rootPage({ standalone: false }));
+if (process.argv.includes('--preview')) fs.writeFileSync(path.join(DIST, 'preview.html'), rootPage({ standalone: false }));
+fs.writeFileSync(path.join(DIST, '.nojekyll'), ''); // serve files as-is, no Jekyll
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${LANGS.flatMap((l) => PAGES.map((p) => `  <url><loc>${SITE.url}/${l.code}/${p.file}</loc></url>`)).join('\n')}
