@@ -14,7 +14,7 @@ const LANGS = [ky, ru, en]; // first = default language
 
 // ---------- School facts (edit here) ----------
 const SITE = {
-  url: 'https://asylkech.edu.kg', // TODO: replace with the real domain
+  url: 'https://asylkechgirls.edu.kg',
   phones: [
     { label: '+996 702 22 99 99', tel: '+996702229999' },
     { label: '+996 990 22 21 99', tel: '+996990222199' },
@@ -805,5 +805,6 @@ fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="
 ${LANGS.flatMap((l) => PAGES.map((p) => `  <url><loc>${SITE.url}/${l.code}/${p.file}</loc></url>`)).join('\n')}
 </urlset>
 `);
+fs.writeFileSync(path.join(DIST, 'CNAME'), new URL(SITE.url).hostname + '\n'); // GitHub Pages custom domain
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`);
 console.log(`Built ${count} pages in ${LANGS.length} languages → ${path.relative(ROOT, DIST)}/`);

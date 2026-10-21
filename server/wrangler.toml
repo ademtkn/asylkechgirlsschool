@@ -5,9 +5,10 @@ compatibility_flags = ["nodejs_compat"]
 
 [vars]
 # Comma-separated list of sites allowed to call the assistant
-ALLOWED_ORIGINS = "https://asylkech.edu.kg,https://www.asylkech.edu.kg"
+ALLOWED_ORIGINS = "https://asylkechgirls.edu.kg,https://www.asylkechgirls.edu.kg"
 
-# Route the assistant under the school domain so the site can call /api/chat:
-# routes = [{ pattern = "asylkech.edu.kg/api/chat", zone_name = "asylkech.edu.kg" }]
+# Serve the assistant on its own subdomain (the site itself is on GitHub Pages), then set
+# SITE.aiEndpoint in src/build.mjs to "https://api.asylkechgirls.edu.kg":
+# routes = [{ pattern = "api.asylkechgirls.edu.kg", custom_domain = true }]
 
 # Secret (never commit it):  npx wrangler secret put ANTHROPIC_API_KEY

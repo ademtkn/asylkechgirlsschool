@@ -54,3 +54,20 @@ Cevap kaynakları:
    `https://asylkech-assistant.<hesap>.workers.dev`) yazın, `wrangler.toml` içindeki `ALLOWED_ORIGINS`'e
    site adresini ekleyin ve siteyi tekrar derleyin.
 2. **Sunucu yoksa:** Asistan sitedeki metinlerde anahtar kelime araması yapar ve ilgili bölümü sayfa bağlantısıyla gösterir.
+
+## Yayın: GitHub Pages + asylkechgirls.edu.kg
+`main` dalına her gönderimde `.github/workflows/pages.yml` siteyi derler ve `dist/` klasörünü GitHub Pages'te yayınlar.
+`dist/CNAME` dosyası alan adını (`asylkechgirls.edu.kg`) GitHub'a bildirir.
+
+1. GitHub → depo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Alan adının DNS kayıtları (cctld.kg panelinde ya da alan adını yönettiğiniz DNS servisinde):
+
+   | Tür | Ad | Değer |
+   |---|---|---|
+   | A | @ | 185.199.108.153 |
+   | A | @ | 185.199.109.153 |
+   | A | @ | 185.199.110.153 |
+   | A | @ | 185.199.111.153 |
+   | CNAME | www | ademtkn.github.io |
+
+3. DNS yayıldıktan sonra **Settings → Pages → Custom domain** alanında `asylkechgirls.edu.kg` görünür; **Enforce HTTPS** kutusunu işaretleyin.
