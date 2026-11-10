@@ -1,0 +1,98 @@
+[
+  {
+    "file": "photos/home-welcome.jpg",
+    "label": {
+      "en": "Home — welcome (portrait)",
+      "ky": "Башкы бет — кош келиңиз (тик)",
+      "ru": "Главная — приветствие (вертикальное)"
+    }
+  },
+  {
+    "file": "photos/stage-1.jpg",
+    "label": {
+      "en": "Primary school, grades 1–4",
+      "ky": "Башталгыч мектеп, 1–4-класстар",
+      "ru": "Начальная школа, 1–4 классы"
+    }
+  },
+  {
+    "file": "photos/stage-2.jpg",
+    "label": {
+      "en": "Middle school, grades 5–9",
+      "ky": "Орто мектеп, 5–9-класстар",
+      "ru": "Средняя школа, 5–9 классы"
+    }
+  },
+  {
+    "file": "photos/stage-3.jpg",
+    "label": {
+      "en": "Senior school, grades 10–11",
+      "ky": "Жогорку класстар, 10–11",
+      "ru": "Старшая школа, 10–11 классы"
+    }
+  },
+  {
+    "file": "photos/life-1.jpg",
+    "label": {
+      "en": "School life collage 1 (large, portrait)",
+      "ky": "Мектеп турмушу коллажы 1 (чоң, тик)",
+      "ru": "Коллаж «Школьная жизнь» 1 (крупное, вертикальное)"
+    }
+  },
+  {
+    "file": "photos/life-2.jpg",
+    "label": {
+      "en": "School life collage 2",
+      "ky": "Мектеп турмушу коллажы 2",
+      "ru": "Коллаж «Школьная жизнь» 2"
+    }
+  },
+  {
+    "file": "photos/life-3.jpg",
+    "label": {
+      "en": "School life collage 3",
+      "ky": "Мектеп турмушу коллажы 3",
+      "ru": "Коллаж «Школьная жизнь» 3"
+    }
+  },
+  {
+    "file": "photos/about-story.jpg",
+    "label": {
+      "en": "About — our story (portrait)",
+      "ky": "Мектеп жөнүндө — тарыхыбыз (тик)",
+      "ru": "О школе — наша история (вертикальное)"
+    }
+  },
+  {
+    "file": "photos/director.jpg",
+    "label": {
+      "en": "About — Director (portrait)",
+      "ky": "Мектеп жөнүндө — директор (тик)",
+      "ru": "О школе — директор (вертикальное)"
+    }
+  },
+  {
+    "file": "photos/languages.jpg",
+    "label": {
+      "en": "Academics — languages (portrait)",
+      "ky": "Окуу — тилдер (тик)",
+      "ru": "Обучение — языки (вертикальное)"
+    }
+  },
+  {
+    "file": "photos/news-instagram.jpg",
+    "label": {
+      "en": "News — Instagram card",
+      "ky": "Жаңылыктар — Instagram картасы",
+      "ru": "Новости — карточка Instagram"
+    }
+  },
+  {
+    "file": "photos/news-threads.jpg",
+    "label": {
+      "en": "News — Threads card",
+      "ky": "Жаңылыктар — Threads картасы",
+      "ru": "Новости — карточка Threads"
+    }
+  }
+]

@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 Sitemap: https://ademtkn.github.io/asylkechgirlsschool/sitemap.xml

@@ -1,0 +1,310 @@
+[
+  {
+    "id": "director",
+    "dept": "lead",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Director",
+      "ky": "Директор",
+      "ru": "Директор"
+    }
+  },
+  {
+    "id": "deputyAcademic",
+    "dept": "lead",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Deputy Director, Academic Affairs",
+      "ky": "Директордун окуу иштери боюнча орун басары",
+      "ru": "Заместитель директора по учебной работе"
+    }
+  },
+  {
+    "id": "deputyPastoral",
+    "dept": "lead",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Deputy Director, Pastoral Care",
+      "ky": "Директордун тарбия иштери боюнча орун басары",
+      "ru": "Заместитель директора по воспитательной работе"
+    }
+  },
+  {
+    "id": "primary1",
+    "dept": "primary",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Primary teacher, Grade 1",
+      "ky": "Башталгыч класстын мугалими, 1-класс",
+      "ru": "Учитель начальных классов, 1 класс"
+    }
+  },
+  {
+    "id": "primary2",
+    "dept": "primary",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Primary teacher, Grade 2",
+      "ky": "Башталгыч класстын мугалими, 2-класс",
+      "ru": "Учитель начальных классов, 2 класс"
+    }
+  },
+  {
+    "id": "primary3",
+    "dept": "primary",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Primary teacher, Grade 3",
+      "ky": "Башталгыч класстын мугалими, 3-класс",
+      "ru": "Учитель начальных классов, 3 класс"
+    }
+  },
+  {
+    "id": "primary4",
+    "dept": "primary",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Primary teacher, Grade 4",
+      "ky": "Башталгыч класстын мугалими, 4-класс",
+      "ru": "Учитель начальных классов, 4 класс"
+    }
+  },
+  {
+    "id": "kyrgyz",
+    "dept": "lang",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Kyrgyz language & literature",
+      "ky": "Кыргыз тили жана адабияты",
+      "ru": "Кыргызский язык и литература"
+    }
+  },
+  {
+    "id": "russian",
+    "dept": "lang",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Russian language & literature",
+      "ky": "Орус тили жана адабияты",
+      "ru": "Русский язык и литература"
+    }
+  },
+  {
+    "id": "english1",
+    "dept": "lang",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "English teacher",
+      "ky": "Англис тили мугалими",
+      "ru": "Учитель английского языка"
+    }
+  },
+  {
+    "id": "english2",
+    "dept": "lang",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "English teacher",
+      "ky": "Англис тили мугалими",
+      "ru": "Учитель английского языка"
+    }
+  },
+  {
+    "id": "math",
+    "dept": "stem",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Mathematics",
+      "ky": "Математика",
+      "ru": "Математика"
+    }
+  },
+  {
+    "id": "physics",
+    "dept": "stem",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Physics",
+      "ky": "Физика",
+      "ru": "Физика"
+    }
+  },
+  {
+    "id": "chembio",
+    "dept": "stem",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Chemistry & biology",
+      "ky": "Химия жана биология",
+      "ru": "Химия и биология"
+    }
+  },
+  {
+    "id": "informatics",
+    "dept": "stem",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Informatics & robotics",
+      "ky": "Информатика жана робототехника",
+      "ru": "Информатика и робототехника"
+    }
+  },
+  {
+    "id": "history",
+    "dept": "hum",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "History & social studies",
+      "ky": "Тарых жана коом таануу",
+      "ru": "История и обществознание"
+    }
+  },
+  {
+    "id": "art",
+    "dept": "hum",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Fine art & crafts",
+      "ky": "Сүрөт искусствосу жана кол өнөрчүлүк",
+      "ru": "Изобразительное искусство и рукоделие"
+    }
+  },
+  {
+    "id": "music",
+    "dept": "hum",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Music",
+      "ky": "Музыка",
+      "ru": "Музыка"
+    }
+  },
+  {
+    "id": "pe",
+    "dept": "hum",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Physical education & dance",
+      "ky": "Дене тарбия жана бий",
+      "ru": "Физкультура и танцы"
+    }
+  },
+  {
+    "id": "psychologist",
+    "dept": "support",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "School psychologist",
+      "ky": "Мектеп психологу",
+      "ru": "Школьный психолог"
+    }
+  },
+  {
+    "id": "nurse",
+    "dept": "support",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "School nurse",
+      "ky": "Медайым",
+      "ru": "Медсестра"
+    }
+  },
+  {
+    "id": "admissions",
+    "dept": "support",
+    "name": {
+      "en": "",
+      "ky": "",
+      "ru": ""
+    },
+    "role": {
+      "en": "Admissions officer",
+      "ky": "Кабыл алуу комиссиясынын адиси",
+      "ru": "Специалист приёмной комиссии"
+    }
+  }
+]

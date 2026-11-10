@@ -1,0 +1,53 @@
+{
+  "repo": "ademtkn/asylkechgirlsschool",
+  "url": "https://ademtkn.github.io/asylkechgirlsschool",
+  "customDomain": "",
+  "phones": [
+    {
+      "label": "+996 702 22 99 99",
+      "tel": "+996702229999"
+    },
+    {
+      "label": "+996 990 22 21 99",
+      "tel": "+996990222199"
+    }
+  ],
+  "whatsapp": "996702229999",
+  "instagram": "https://www.instagram.com/asylkech_girls_school/",
+  "dm": "https://ig.me/m/asylkech_girls_school",
+  "threads": "https://www.threads.com/@asylkech_girls_school",
+  "handle": "@asylkech_girls_school",
+  "map": "https://go.2gis.com/TtBYP",
+  "network": "https://indigo.edu.kg/",
+  "aiEndpoint": "",
+  "menu": [
+    {
+      "key": "about",
+      "show": true
+    },
+    {
+      "key": "academics",
+      "show": true
+    },
+    {
+      "key": "admissions",
+      "show": true
+    },
+    {
+      "key": "life",
+      "show": true
+    },
+    {
+      "key": "staff",
+      "show": true
+    },
+    {
+      "key": "news",
+      "show": true
+    },
+    {
+      "key": "contact",
+      "show": true
+    }
+  ]
+}

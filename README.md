@@ -2,40 +2,56 @@
 
 Indigo Academy'ye bağlı Asylkech Girls' School için 3 dilli (Kırgızca, Rusça, İngilizce) statik site.
 
+## Yönetim paneli (admin)
+Adres: **https://ademtkn.github.io/asylkechgirlsschool/admin/**
+
+Panelin kendi dili İngilizce, Kırgızca veya Rusça seçilebilir (giriş ekranında ve sol menünün altında EN / KG / RU;
+arayüz metinleri `admin/i18n.js` dosyasında).
+
+Panelden kod bilmeden şunlar değiştirilebilir, her metin üç dilde (EN / KG / RU) yan yana:
+- **Sayfa metinleri:** tüm sayfalardaki başlıklar, yazılar, SSS, kulüpler, takvim… Listelere öğe eklenip silinebilir, sırası değiştirilebilir.
+- **Menü:** sayfaların sırası, menüdeki adı, menüde gösterilip gizlenmesi.
+- **Öğretmenler:** ad, görev, bölüm, fotoğraf; yeni öğretmen ekleme ve silme.
+- **Haberler:** fotoğraflı haber; son üç haber ana sayfada da görünür, her haberin kendi sayfası olur.
+- **Ek sayfalar:** menüye yeni sayfa (ör. Burslar).
+- **Resimler:** sayfalardaki fotoğraf alanları (yüklenen resim tarayıcıda otomatik küçültülür).
+- **İletişim ve ayarlar:** telefon, WhatsApp, adres, saatler, Instagram, Threads, 2GIS bağlantısı, alan adı.
+
+**Giriş:** Panel bir GitHub erişim anahtarıyla açılır (giriş ekranında adım adım anlatılıyor):
+GitHub → Settings → Developer settings → Fine-grained tokens → yalnızca `asylkechgirlsschool` deposu,
+izinler **Contents: Read and write** ve **Actions: Read-only**. Her editöre ayrı anahtar verin; ayrılan kişinin anahtarını silin.
+
+**Nasıl çalışır:** “Kaydet ve yayınla”ya basınca panel siteyi tarayıcıda yeniden üretir (`src/site.mjs`, Node'daki
+derlemeyle aynı kod) ve içerik dosyalarını, resimleri ve değişen `docs/` sayfalarını depoya tek bir commit olarak yazar.
+GitHub Pages `main` dalının `/docs` klasörünü yayınladığı için site 1–2 dakika içinde güncellenir. GitHub Actions gerekmez.
+
 ## Yapı
 ```
-src/build.mjs          Sayfa şablonları + okul bilgileri (telefon, sosyal medya, kadro listesi)
-src/content/ky|ru|en   Her dilin tüm metinleri
-assets/css, js, img    Tasarım, betikler, logolar
+content/site.json      İletişim bilgileri, menü sırası/görünürlüğü, alan adı
+content/en|ky|ru.json  Her dilin tüm metinleri
+content/staff.json     Öğretmenler (ad ve görev 3 dilde, bölüm)
+content/news.json      Haberler        content/pages.json   Ek sayfalar
+content/images.json    Resimler bölümündeki fotoğraf alanlarının listesi
+admin/                 Yönetim paneli
+src/site.mjs           Sayfa şablonları (content/ dosyalarından siteyi üretir; panel de bunu kullanır)
+src/build.mjs          Node ile derleme: node src/build.mjs → docs/
+assets/css, js, img    Tasarım, betikler, logo, yüklenen fotoğraflar
+server/                Yapay zeka asistanı için Cloudflare Worker (isteğe bağlı)
 docs/                  Derlenmiş site (GitHub Pages bu klasörü yayınlar)
 ```
+Kodda (`src/`, `assets/`, `admin/`) değişiklik yaptıktan sonra `node src/build.mjs` çalıştırıp `docs/` dahil commit edin (Node 18+, bağımlılık yok).
 
-Derleme: `node src/build.mjs` (Node 18+, bağımlılık yok).
+Sayfalar (her dilde ayrı): `index`, `about`, `academics`, `admissions`, `school-life`, `staff`, `news`, `contact`,
+ayrıca her haber için `news-<id>.html` ve her ek sayfa için `page-<ad>.html`. Kök `index.html` dil seçim sayfasıdır.
 
-Sayfalar (her dilde ayrı): `index` (Ana sayfa), `about`, `academics`, `admissions`, `school-life`,
-`staff` (Kadro), `news`, `contact`. Adresleri: `/ky/…`, `/ru/…`, `/en/…`. Kök `index.html` dil seçim sayfasıdır.
-
-## Gerçek fotoğrafları eklemek
-Dosyayı aşağıdaki adla koyup tekrar derleyin; tasarımdaki yer tutucu otomatik olarak fotoğrafla değişir.
-
-| Dosya | Nerede |
-|---|---|
-| `assets/img/photos/home-welcome.jpg` | Ana sayfa karşılama |
-| `assets/img/photos/stage-1.jpg`, `stage-2.jpg`, `stage-3.jpg` | Kademeler (Ana sayfa + Eğitim) |
-| `assets/img/photos/life-1.jpg`, `life-2.jpg`, `life-3.jpg` | Okul hayatı kolajı |
-| `assets/img/photos/about-story.jpg`, `director.jpg`, `languages.jpg` | Hakkımızda / Eğitim |
-| `assets/img/photos/news-instagram.jpg`, `news-threads.jpg` | Haberler |
-| `assets/img/staff/<id>.jpg` | Kadro portreleri (ör. `director.jpg`, `math.jpg`) |
-
-## Kadro
-`src/build.mjs` içindeki `STAFF` listesinde her kişinin `name` alanını doldurun:
-`name: 'Айгүл Асанова'` veya dile göre `name: { ky: '…', ru: '…', en: '…' }`.
-Görev adları `src/content/*.mjs` içinde `staff.roles` altındadır.
+## Fotoğraf dosyaları
+Panel fotoğrafları şu adlarla kaydeder: `assets/img/photos/*.jpg` (sayfa fotoğrafları), `assets/img/staff/<id>.jpg`,
+`assets/img/news/<id>.jpg`, `assets/img/pages/<ad>.jpg`. Fotoğrafı olmayan alanlarda tasarımdaki renkli desen görünür.
 
 ## Yayından önce doğrulanacaklar
 - Çalışma saatleri, günlük program saatleri, kabul belgeleri ve SSS cevapları taslaktır.
 - WhatsApp numarası olarak +996 702 22 99 99 varsayıldı.
-- `SITE.url` alanına gerçek alan adını yazın (hreflang ve sitemap için).
+- Hepsi panelden düzeltilebilir.
 
 ## Yapay zeka asistanı (sağ alt köşe)
 `assets/js/assistant.js`, her sayfanın sağ alt köşesinde açılan sohbet penceresidir. Sadece okulla ilgili soruları,
@@ -50,21 +66,20 @@ Cevap kaynakları:
    npx wrangler secret put ANTHROPIC_API_KEY      # API anahtarı sadece sunucuda durur
    npx wrangler deploy
    ```
-   Ardından `src/build.mjs` içinde `SITE.aiEndpoint` alanına Worker adresini (ör. `/api/chat` ya da
-   `https://asylkech-assistant.<hesap>.workers.dev`) yazın, `wrangler.toml` içindeki `ALLOWED_ORIGINS`'e
-   site adresini ekleyin ve siteyi tekrar derleyin.
+   Ardından Worker adresini panelde **İletişim ve ayarlar → Gelişmiş → Asistan sunucusu** alanına yazın
+   ve `wrangler.toml` içindeki `ALLOWED_ORIGINS`'e site adresini ekleyin.
 2. **Sunucu yoksa:** Asistan sitedeki metinlerde anahtar kelime araması yapar ve ilgili bölümü sayfa bağlantısıyla gösterir.
 
 ## Yayın: GitHub Pages + asylkechgirls.edu.kg
-Site `docs/` klasöründen yayınlanır. Metinleri değiştirdikten sonra `node src/build.mjs` çalıştırıp `docs/` dahil commit edin.
+Site `docs/` klasöründen yayınlanır. Metinler ve resimler panelden değiştirilir; panel yayını kendisi yapar.
 
 Şu anki adres: **https://ademtkn.github.io/asylkechgirlsschool/**
 
 1. GitHub → depo → **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
    **Branch: `main`**, klasör **`/docs`** → **Save**.
 
-Alan adına geçerken: `src/build.mjs` içinde `SITE.url` değerini `https://asylkechgirls.edu.kg`, `SITE.customDomain`
-değerini `asylkechgirls.edu.kg` yapın (derleme `docs/CNAME` dosyasını yazar), sonra aşağıdakileri yapın.
+Alan adına geçerken: panelde **İletişim ve ayarlar → Gelişmiş** bölümünde sitenin adresini `https://asylkechgirls.edu.kg`,
+özel alan adını `asylkechgirls.edu.kg` yapıp yayınlayın (derleme `docs/CNAME` dosyasını yazar), sonra aşağıdakileri yapın.
 
 2. Alan adının DNS kayıtları (cctld.kg panelinde ya da alan adını yönettiğiniz DNS servisinde):
 

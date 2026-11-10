@@ -1,0 +1,37 @@
+// Minimal line icon set (24×24, stroke = currentColor)
+const P = {
+  book: '<path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+  heart: '<path d="M12 20s-7.5-4.6-9-9.4C2 7.2 4.3 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 2.9 0 5.2 2.7 4.2 6.1C19.5 15.4 12 20 12 20z"/>',
+  shield: '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+  spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
+  palette: '<path d="M12 3a9 9 0 100 18c1.2 0 1.8-.8 1.8-1.7 0-1.4-1.2-1.6-1.2-2.8 0-1 .8-1.7 1.8-1.7H17a4 4 0 004-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',
+  music: '<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  flask: '<path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3"/><path d="M7 15h10"/>',
+  code: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/>',
+  trophy: '<path d="M7 4h10v5a5 5 0 01-10 0z"/><path d="M7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3M12 14v4M8 21h8M9 18h6"/>',
+  run: '<circle cx="14" cy="4.5" r="1.8"/><path d="M6 20l3.5-5 3 2.5V22M9.5 15l1.5-6 4 3.5 3.5.5M8 10l3-1"/>',
+  chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+  thread: '<path d="M4 20L20 4"/><circle cx="18" cy="6" r="2.5"/><path d="M5 12c2-1 4-1 6 1s4 2 6 1"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>',
+  calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  phone: '<path d="M5 3.5h3.5l1.8 4.5-2.3 1.4a11 11 0 006.6 6.6l1.4-2.3 4.5 1.8V19a1.5 1.5 0 01-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 015 3.5z"/>',
+  pin: '<path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0113 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  users: '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.6c2.4.3 4 2.1 4.5 4.9"/>',
+  doc: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
+  star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>',
+  leaf: '<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6.5 10-8.5"/>',
+  needle: '<path d="M4 20L18 6"/><path d="M16 4.5a2.1 2.1 0 013.5 3.5"/><path d="M6 10c3 0 4 1.5 4 4s1 4 4 4"/>',
+  mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21"/>',
+  instagram: '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/>',
+  threads: '<path d="M16.6 11.2c-.6-2.7-2.4-4-4.8-4-2.9 0-4.8 2.2-4.8 5.1 0 3.1 2 5.2 5 5.2 2.6 0 4.4-1.5 4.4-3.6 0-1.8-1.5-3-3.8-3-2 0-3.3 1-3.3 2.4 0 1.2 1 2 2.4 2 2.3 0 3.4-2 3.1-5.6"/><path d="M19.5 8c-1.3-3-4-4.5-7.5-4.5C7 3.5 4 7.2 4 12.3S7 20.5 12 20.5c3.6 0 6.2-1.6 7.5-4.7"/>',
+  whatsapp: '<path d="M4 20l1.3-4A8.5 8.5 0 1112 20.5a8.6 8.6 0 01-4-1z"/><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l.8-1.7-1.8-1-.9.8a4.2 4.2 0 01-2.7-2.7l.8-.9-1-1.8z"/>',
+  menu: '<path d="M4 7h16M4 12h16M4 17h10"/>',
+  close: '<path d="M6 6l12 12M18 6L6 18"/>',
+  map: '<path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>',
+};
+
+export const icon = (name, cls = 'ico') =>
+  `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[name] || ''}</svg>`;
