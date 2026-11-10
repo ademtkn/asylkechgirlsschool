@@ -149,3 +149,13 @@ label { font-weight: 700; font-size: .85rem; }
 .lang-pick--dark { justify-self: start; border-color: rgba(255,255,255,.25); margin-bottom: .4rem; }
 .lang-pick--dark button { color: rgba(255,255,255,.75); }
 .lang-pick--dark button[aria-pressed="true"] { background: #fff; color: var(--primary-ink); }
+
+/* sign-in with username + password, editors */
+.login-fields { display: grid; gap: .8rem; }
+.login-fields label { margin-bottom: -.4rem; }
+.login-note { background: var(--bg); border-radius: 12px; padding: .7rem .9rem; font-size: .88rem; color: var(--muted); }
+.login-switch { justify-self: center; font-size: .85rem; color: var(--muted); }
+.who { color: rgba(255,255,255,.65); font-size: .82rem; }
+.note-box { background: #FFF6E8; border: 1px solid #F3DDB8; color: #6B4A12; border-radius: 14px; padding: .8rem 1rem; font-size: .88rem; margin: 0 0 1rem; max-width: 52rem; }
+.pw-row { display: grid; gap: .3rem; justify-items: start; padding-bottom: .8rem; }
+.pw-row .grid2 { width: 100%; }

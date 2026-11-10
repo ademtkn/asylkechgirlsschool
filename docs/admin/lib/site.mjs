@@ -863,6 +863,8 @@ ${LANGS.flatMap((l) => PAGES.map((p) => p.file).concat(NEWS.map(newsFile)).map((
 `;
 if (SITE.customDomain) out['docs/CNAME'] = SITE.customDomain + '\n'; // GitHub Pages custom domain
 out['docs/robots.txt'] = `User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: ${SITE.url}/sitemap.xml\n`;
+// Editor accounts (encrypted, see admin/auth.js) for the sign-in screen
+if (content.editors) out['docs/admin/editors.json'] = JSON.stringify(content.editors, null, 2) + '\n';
 out['docs/admin/config.js'] = `window.ADMIN_CONFIG = ${JSON.stringify({ repo: SITE.repo, branch: 'main' })};\n`;
 Object.defineProperty(out, 'count', { value: count });
 return out;

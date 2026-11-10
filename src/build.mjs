@@ -10,6 +10,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'docs');
 const content = Object.fromEntries(['site', 'en', 'ky', 'ru', 'staff', 'news', 'pages']
   .map((f) => [f, JSON.parse(fs.readFileSync(path.join(ROOT, 'content', `${f}.json`), 'utf8'))]));
+const editors = path.join(ROOT, 'content', 'editors.json'); // optional
+if (fs.existsSync(editors)) content.editors = JSON.parse(fs.readFileSync(editors, 'utf8'));
 const out = generate({ content, exists: (p) => fs.existsSync(path.join(ROOT, p)), preview: process.argv.includes('--preview') });
 
 fs.rmSync(DIST, { recursive: true, force: true });

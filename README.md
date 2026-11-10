@@ -16,10 +16,30 @@ Panelden kod bilmeden şunlar değiştirilebilir, her metin üç dilde (EN / KG 
 - **Ek sayfalar:** menüye yeni sayfa (ör. Burslar).
 - **Resimler:** sayfalardaki fotoğraf alanları (yüklenen resim tarayıcıda otomatik küçültülür).
 - **İletişim ve ayarlar:** telefon, WhatsApp, adres, saatler, Instagram, Threads, 2GIS bağlantısı, alan adı.
+- **Editörler:** panele kullanıcı adı ve şifreyle girecek kişileri ekleme, silme, şifre değiştirme.
 
-**Giriş:** Panel bir GitHub erişim anahtarıyla açılır (giriş ekranında adım adım anlatılıyor):
+### Editörler (kullanıcı adı + şifre)
+Editörler panele **kullanıcı adı ve şifre** ile girer. Şifre **4–6 karakter, yalnız Latin harf ve rakam**
+(büyük/küçük harf ayrımı var). Editörleri panelin **Editörler** bölümünden site sahibi veya bir *Yönetici* ekler, siler,
+rolünü ve şifresini değiştirir; her editör kendi şifresini değiştirebilir. Değişiklik "Kaydet ve yayınla"dan 1–2 dakika sonra geçerli olur.
+
+- **Yönetici:** içerik + editör yönetimi. **Editör:** yalnız içerik (ve kendi şifresi).
+- **İlk kurulum:** site sahibi aşağıdaki GitHub anahtarı ile girer → **Editörler → Editör girişini aç** → ilk editörü
+  *Yönetici* olarak ekler → **Kaydet ve yayınla**.
+- **Anahtarın süresi dolarsa:** bir yönetici **Editörler → GitHub anahtarını değiştir** bölümüne yenisini yapıştırır (şifreler değişmez).
+- 5 hatalı denemeden sonra giriş 30 saniyeden başlayarak artan sürelerle bekletilir.
+
+**Güvenlik notu:** Sunucu olmadığı için GitHub anahtarı, `content/editors.json` (yayında `admin/editors.json`) içinde her
+editörün şifresiyle şifrelenmiş olarak (Argon2id + AES-GCM, `admin/auth.js`) herkese açık durur. Bu dosyayı alan biri
+şifreleri kendi bilgisayarında deneyerek bulmaya çalışabilir: harf ve rakam karışık 6 karakterlik bir şifre için bu çok uzun
+sürer, ama `123456` gibi yalnız rakamdan oluşan bir şifre kısa sürede bulunur. Bu yüzden her editöre farklı, harf+rakam
+karışık 6 karakterlik şifre verin ve anahtara yalnız bu depo için *Contents* izni verin. En kötü durumda biri siteyi
+değiştirebilir; GitHub geçmişinden geri alınır, anahtar iptal edilip yenisi girilir.
+
+### Site sahibi girişi: GitHub anahtarı
+Giriş ekranında "Site sahibi misiniz? GitHub anahtarı ile girin" bağlantısı (adımlar ekranda anlatılıyor):
 GitHub → Settings → Developer settings → Fine-grained tokens → yalnızca `asylkechgirlsschool` deposu,
-izinler **Contents: Read and write** ve **Actions: Read-only**. Her editöre ayrı anahtar verin; ayrılan kişinin anahtarını silin.
+izinler **Contents: Read and write** ve **Actions: Read-only**.
 
 **Nasıl çalışır:** “Kaydet ve yayınla”ya basınca panel siteyi tarayıcıda yeniden üretir (`src/site.mjs`, Node'daki
 derlemeyle aynı kod) ve içerik dosyalarını, resimleri ve değişen `docs/` sayfalarını depoya tek bir commit olarak yazar.
@@ -32,6 +52,7 @@ content/en|ky|ru.json  Her dilin tüm metinleri
 content/staff.json     Öğretmenler (ad ve görev 3 dilde, bölüm)
 content/news.json      Haberler        content/pages.json   Ek sayfalar
 content/images.json    Resimler bölümündeki fotoğraf alanlarının listesi
+content/editors.json   Editör hesapları (şifreli; panel yönetir)
 admin/                 Yönetim paneli
 src/site.mjs           Sayfa şablonları (content/ dosyalarından siteyi üretir; panel de bunu kullanır)
 src/build.mjs          Node ile derleme: node src/build.mjs → docs/
