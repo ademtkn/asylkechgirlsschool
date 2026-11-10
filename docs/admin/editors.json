@@ -1,4 +1,23 @@
 {
-  "vault": null,
-  "editors": []
+  "vault": {
+    "iv": "iYGX9uYSjkT2Dttz",
+    "data": "U/1aFWHfTM2gOIQBNTooM84lalWlyj+8Z5lrgx1mpguqZlagGhQ0/nGpqhdfJVokPTilzCzEWIPhwwgd8xe+ShkFvNqIpWppEsZ48cEczLT0nRC1tfKqW0RiEkK85pxRnLBjQRyA8VkaZx7nCGQNj4TMhwIbmpdZlQ=="
+  },
+  "editors": [
+    {
+      "username": "asylkech",
+      "name": "Asylkech",
+      "role": "editor",
+      "salt": "GCRTtOL2cFVqYz4s3qJG3Q==",
+      "kdf": {
+        "alg": "argon2id",
+        "m": 65536,
+        "t": 6,
+        "p": 1
+      },
+      "iv": "qTbzhLJZtehWO4pA",
+      "key": "ITuYMvWkxwCu8aA2u+Z0vlUOgTF1UAhzuWo9Z0RV/vkO+ae1Cifn5FzguTNwpE0L",
+      "created": "2026-11-10"
+    }
+  ]
 }
